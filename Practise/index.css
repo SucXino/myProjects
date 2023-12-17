@@ -1,0 +1,36 @@
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+
+.fa-times{
+    color: red;
+    /* display: none; */
+    padding: 2em;
+    
+}
+
+.fa-bars{
+    color: greenyellow;
+    /* display: none; */
+    padding: 2em;
+
+}
+
+.mydiv{
+    height: 0;
+    overflow: hidden;
+    transition: height 5s;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    padding-left: 20px;
+    padding-top: 0;
+}

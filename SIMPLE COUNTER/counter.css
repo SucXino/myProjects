@@ -1,0 +1,51 @@
+
+
+
+
+ h1{ 
+    padding-bottom: 2px;
+    font-size: 50px;
+}
+
+span{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 2px;
+    font-size: 100px;
+}
+
+    .container{
+        text-align: center;
+    }
+
+    .btn{
+        border: 1px solid #3498db;
+        background: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-family: sans-serif;
+        cursor: pointer;
+        margin: 10px;
+        transition: 0.8s;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        
+    }
+
+    .btn:hover{
+        color: white;
+        background-color: black;
+    } 
+
+
+
+
+
+
+
+
+
+
+
