@@ -1,0 +1,326 @@
+/* 
+
+*{
+    padding: 0;
+    margin: 0; 
+    text-decoration: none;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+h2{
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.nav-center{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px 10px 100px ;
+    width: initial;
+    height: 50px;
+    background-color:white;
+    box-shadow: aqua;
+
+}
+
+span{
+    color: green;
+}
+
+nav ul li{
+    display: inline-block;
+    padding-left: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+nav ul li a{
+    position: relative;
+    color: rgba(0, 251, 255, 0.887);
+    padding: 5px 0;
+}
+
+nav ul li a::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: greenyellow;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s linear;
+
+}
+
+nav ul li a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+label #btn, label #cancel{
+    color: darkblue;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+@media (max-width: 944px){
+    nav h2{
+        left: 6%;
+        top: 20px;
+        font-size: 20px;
+        
+    }
+    nav ul li a{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 860px){
+    nav ul li a{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 860px){
+    label #btn{
+        display: block;
+        
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #34495e;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{ 
+        font-size: 20px;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    #check:checked ~ label #btn{
+        display: none;
+    }
+    #check:checked ~ label #cancel{
+        display: block;
+    }
+}
+
+
+
+
+
+ */
+
+
+
+
+
+
+:root{
+    --color-1: #2f3240;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: #e8eef3;
+}
+
+*{
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.container{
+    /* max-width: 1170px; */
+    border-color: red;
+    /* margin: auto; */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+.header{
+    background-color: var(--color-1);
+    padding: 12px 0;
+    line-height: 1.5;
+}
+
+.header .logo,
+.header .nav{
+    padding: 0 15px;
+}
+
+.header .logo a{
+    font-size: 30px;
+    color: #ffffff;
+    text-transform: capitalize;
+}
+
+.logo{
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.header .nav ul li{
+    display: inline-block;
+    margin-left: 40px;
+    margin-right: 20px;
+    /* padding-left: 60px; */
+}
+
+.header .nav ul li a{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    /* padding: 10px 0; */
+    transition: all 0.5s ease;
+}
+
+.header .nav ul li a.active,
+.header .nav ul li a:hover{
+    color: #f3a93d;
+}
+
+.nav-toggler{
+    height: 34px;
+    width: 44px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    display: none;
+    margin-right: 15px;
+}
+
+.nav-toggler:focus{
+    outline: none;
+    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+.nav-toggler span{
+    height: 2px;
+    width: 20px;
+    background-color: var(--color-1);
+    display: block;
+    margin: auto;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-toggler.active span{
+    background-color: transparent;
+}
+
+.nav-toggler span::before,
+.nav-toggler span::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-1);
+    transition: all 0.3s ease;
+}
+
+.nav-toggler span::before{
+    transform: translateY(-6px);
+}
+
+.nav-toggler.active span::before{
+    transform: rotate(45deg);
+}
+
+.nav-toggler span::after{
+    transform: translateY(6px);
+}
+
+.nav-toggler.active span::after{
+    transform: rotate(135deg);
+}
+
+@media(max-width:600px){
+    .nav-toggler{
+        display: block;
+    }
+    .header .nav{
+        width: 100%;
+        /* background-color: red; */
+        padding: 0;
+    }
+    .header .nav{
+        width: 100%;
+        padding: 0;
+        max-height: 0px;
+        overflow: hidden;
+        visibility: hidden;
+        transition: all 0.5s ease;
+    }
+    .header .nav.open{
+        visibility: visible;
+    }
+    .header .nav ul{
+        padding: 12px 15px 0;
+        margin-top: 12px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    .header .nav ul li{
+        display: block;
+        margin: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
